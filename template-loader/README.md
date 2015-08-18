@@ -1,6 +1,6 @@
-# Example extension
+# Template-loader extension
 
-This is extension for fix template lib.
+An extension for a fix template lib.
 
 Dependings:
 not required;
