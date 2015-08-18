@@ -2,8 +2,8 @@
 
 An extension for a fix template lib.
 
-Dependings:
+###Dependings:
 not required;
 
-Author:
+###Author:
 Mykhailo Shatilov
