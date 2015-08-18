@@ -1,6 +1,6 @@
 # Compare extension
 
-This is example extension.
+An extension for compare products with use session.
 
 ###Dependings:
 not required.
