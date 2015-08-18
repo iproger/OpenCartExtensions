@@ -2,8 +2,8 @@
 
 This is example extension.
 
-Dependings:
-not required;
+###Dependings:
+- [template-loader](https://github.com/iproger/OpenCartExtensions/tree/master/template-loader/).
 
-Author:
+###Author:
 Mykhailo Shatilov
