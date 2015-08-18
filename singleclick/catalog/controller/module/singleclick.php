@@ -19,7 +19,7 @@ class ControllerModuleSingleclick extends Controller
         $result = array('success' => false);
         $products_list = array();
         $messages = array();
-        $customer_name = 'Клиент';
+        $customer_name = 'Client';
         $config_url = parse_url($this->config->get('config_url'));
         $products = array();
         
@@ -35,13 +35,11 @@ class ControllerModuleSingleclick extends Controller
                     break;
             }
             
-            //print_r($products_list);exit;
-            
             if ($products_list) {
                 foreach ($products_list as $product) {
                     $quantity = 1;
                     
-                    if (isset($product['quantity'])) {
+                    if (isset($product['quantity']) && $this->request->post['type'] == 'cart') {
                         $quantity = $product['quantity'];
                     }
                     
@@ -72,8 +70,7 @@ class ControllerModuleSingleclick extends Controller
                 $mail->password = $this->config->get('config_smtp_password');
                 $mail->port = $this->config->get('config_smtp_port');
                 $mail->timeout = $this->config->get('config_smtp_timeout');
-                //$mail->setTo($this->config->get('config_email'));
-                $mail->setTo('proger.mixa@gmail.com');
+                $mail->setTo($this->config->get('config_email'));
                 $mail->setFrom($this->config->get('config_email'));
                 $mail->setSender($customer_name);
                 $mail->setSubject(html_entity_decode(sprintf($this->language->get('email_subject'), $config_url['host'], ENT_QUOTES, 'UTF-8')));
